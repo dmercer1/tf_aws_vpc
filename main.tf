@@ -60,8 +60,9 @@ resource "aws_vpc_peering_connection" "mod" {
     peer_vpc_id = "${var.peer_vpc_id}"
     vpc_id = "${aws_vpc.mod.id}"
 }
-resource "aws_elb" "main" {
-  name = "elb-${var.listener_name}"
+
+resource "aws_elb" "main-elb" {
+  name = "${var.listener_name}-elb"
   availability_zones = "${element(split(",", var.azs), count.index)}"
 
   listener {
