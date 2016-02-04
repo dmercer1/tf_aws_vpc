@@ -14,13 +14,3 @@ variable "enable_dns_support" {
 variable "peer_name" { }
 variable "peer_owner_id" { }
 variable "peer_vpc_id" { }
-variable "listener_name"
-variable "instance_port" { default = "80" }
-variable "instance_protocol" { default = "http" }
-variable "lb_port" { default = "80" }
-variable "lb_protocol" { default = "http" }
-variable "ssl_certificate" { }
-variable "health_threshold" { }
-variable "unhealthy_threshold" { }
-variable "target" { }
-variable "interval" { }
