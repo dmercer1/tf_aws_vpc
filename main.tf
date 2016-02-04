@@ -67,8 +67,8 @@ resource "aws_elb" "mod" {
   listener {
     instance_port = "${var.instance_port}"
     instance_protocol = "${var.instance_protocol}"
-    lb_port = "${var.listener_name}"
-    lb_protocol = "${var.ilb_port}"
+    ilb_port = "${var.ilb_port}"
+    ilb_protocol = "${var.ilb_protocol}"
     ssl_certificate_id = "${var.ssl_certificate}"
   }
 

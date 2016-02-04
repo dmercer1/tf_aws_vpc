@@ -18,6 +18,7 @@ variable "instance_port" { }
 variable "instance_protocol" { }
 variable "listener_name"
 variable "ilb_port" { }
+variable "ilb_protocol" { }
 variable "ssl_certificate" { }
 variable "health_threshold" { }
 variable "unhealthy_threshold" { }
