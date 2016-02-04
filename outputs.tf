@@ -1,3 +1,6 @@
+output "vpc-name" {
+  value = "${var.name}"
+}
 output "private_subnets" {
   value = "${join(",", aws_subnet.private.*.id)}"
 }
