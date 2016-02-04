@@ -65,14 +65,14 @@ resource "aws_elb" "mod" {
   availability_zones = "${element(split(",", var.azs), count.index)}"
 
   listener {
-    instance_port = "${var.instance_port}"
+    instance_port = ${var.instance_port}
     instance_protocol = "http"
     lb_port = 80
     lb_protocol = "http"
   }
 
   listener {
-    instance_port = "${var.instance_port}"
+    instance_port = ${var.instance_port}
     instance_protocol = "http"
     lb_port = 443
     lb_protocol = "https"
