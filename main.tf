@@ -60,7 +60,7 @@ resource "aws_vpc_peering_connection" "mod" {
     peer_vpc_id = "${var.peer_vpc_id}"
     vpc_id = "${aws_vpc.mod.id}"
 }
-resource "aws_elb" "mod" {
+resource "aws_elb" "main" {
   name = "elb-${var.listener_name}"
   availability_zones = "${element(split(",", var.azs), count.index)}"
 
@@ -93,6 +93,6 @@ resource "aws_elb" "mod" {
   connection_draining_timeout = 400
 
   tags {
-    Name = "elb-${var.listener_name}"
+    Name = "elb-${var.name}"
   }
 }
