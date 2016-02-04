@@ -61,5 +61,3 @@ resource "aws_vpc_peering_connection" "mod" {
     vpc_id = "${aws_vpc.mod.id}"
     auto_accept = "true"
 }
-
-}
