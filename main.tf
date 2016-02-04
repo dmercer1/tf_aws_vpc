@@ -61,14 +61,14 @@ resource "aws_vpc_peering_connection" "mod" {
     vpc_id = "${aws_vpc.mod.id}"
 }
 resource "aws_elb" "mod" {
-  name = "elb-${var.name}"
+  name = "elb-${var.listener_name}"
   availability_zones = "${element(split(",", var.azs), count.index)}"
 
   listener {
     instance_port = "${var.instance_port}"
     instance_protocol = "${var.instance_protocol}"
-    ilb_port = "${var.ilb_port}"
-    ilb_protocol = "${var.ilb_protocol}"
+    lb_port = "${var.lb_port}"
+    lb_protocol = "${var.lb_protocol}"
     ssl_certificate_id = "${var.ssl_certificate}"
   }
 
