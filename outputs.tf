@@ -1,5 +1,9 @@
-output "vpc-name" {
+output "vpc_name" {
   value = "${var.name}"
+}
+
+output "vpc_id" {
+  value = "${aws_vpc.mod.id}"
 }
 
 output "private_subnets" {
@@ -8,10 +12,6 @@ output "private_subnets" {
 
 output "public_subnets" {
   value = "${join(",", aws_subnet.public.*.id)}"
-}
-
-output "vpc_id" {
-  value = "${aws_vpc.mod.id}"
 }
 
 output "public_route_table_id" {
