@@ -75,7 +75,7 @@ resource "aws_elb" "mod" {
   health_check {
     healthy_threshold = "${var.health_threshold}"
     unhealthy_threshold = "${var.unhealthy_threshold}"
-    timeout = 30
+    timeout = 5
     target = "${var.target}"
     interval = "${var.interval}"
   }
