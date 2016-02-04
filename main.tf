@@ -60,3 +60,32 @@ resource "aws_vpc_peering_connection" "mod" {
     peer_vpc_id = "${var.peer_vpc_id}"
     vpc_id = "${aws_vpc.mod.id}"
 }
+resource "aws_elb" "mod" {
+  name = "elb-${var.name}"
+  availability_zones = "${element(split(",", var.azs), count.index)}"
+
+  listener {
+    instance_port = "${var.instance_port}"
+    instance_protocol = "${var.instance_protocol}"
+    lb_port = "${var.listener_name}"
+    lb_protocol = "${var.ilb_port}"
+    ssl_certificate_id = "${var.ssl_certificate}"
+  }
+
+  health_check {
+    healthy_threshold = "${var.health_threshold}"
+    unhealthy_threshold = "${var.unhealthy_threshold}"
+    timeout = 30
+    target = "${var.target}"
+    interval = "${var.interval}"
+  }
+
+  cross_zone_load_balancing = true
+  idle_timeout = 400
+  connection_draining = true
+  connection_draining_timeout = 400
+
+  tags {
+    Name = "elb-${var.listener_name}"
+  }
+}
