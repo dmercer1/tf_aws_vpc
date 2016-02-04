@@ -15,10 +15,10 @@ variable "peer_name" { }
 variable "peer_owner_id" { }
 variable "peer_vpc_id" { }
 variable "listener_name"
-variable "instance_port" { }
-variable "instance_protocol" { }
-variable "lb_port" { }
-variable "lb_protocol" { }
+variable "instance_port" { default = "80" }
+variable "instance_protocol" { default = "http" }
+variable "lb_port" { default = "80" }
+variable "lb_protocol" { default = "http" }
 variable "ssl_certificate" { }
 variable "health_threshold" { }
 variable "unhealthy_threshold" { }
