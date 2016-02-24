@@ -21,19 +21,19 @@ output "private_subnet_2" {
 output "private_subnet_3" {
   value = "${aws_subnet.private.3.id}"
 }
-output "public_subnet_4" {
+output "private_subnet_4" {
   value = "${aws_subnet.private.4.id}"
 }
 
-output "public_subnet_5" {
+output "private_subnet_5" {
   value = "${aws_subnet.private.5.id}"
 }
 
-output "public_subnet_6" {
+output "private_subnet_6" {
   value = "${aws_subnet.private.6.id}"
 }
 
-output "public_subnet_7" {
+output "private_subnet_7" {
   value = "${aws_subnet.private.7.id}"
 }
 
