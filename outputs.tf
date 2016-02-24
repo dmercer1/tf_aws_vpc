@@ -37,8 +37,6 @@ output "public_subnet_7" {
   value = "${aws_subnet.private.7.id}"
 }
 
-
-
 output "public_subnet_0" {
   value = "${aws_subnet.public.0.id}"
 }
