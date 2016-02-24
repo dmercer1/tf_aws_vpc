@@ -2,6 +2,10 @@ output "vpc_name" {
   value = "${var.name}"
 }
 
+output "region_code" {
+  value = "$region_code"
+}
+
 output "vpc_id" {
   value = "${aws_vpc.mod.id}"
 }
